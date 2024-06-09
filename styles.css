@@ -1,0 +1,186 @@
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #e0f7fa;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.container {
+   width: 100%;
+   max-width: 600px;
+   margin: 0 auto;
+   background-color: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   overflow: hidden;
+}
+
+header {
+   background-color: #00796b;
+   color: #ffffff;
+   padding: 20px;
+   text-align: center;
+}
+
+header h1 {
+   margin: 0;
+}
+
+main {
+   padding: 20px;
+   flex: 1;
+   overflow: auto;
+}
+
+.login-container, .todo-container {
+   text-align: center;
+}
+
+.login-container h2 {
+   color: #00796b;
+   margin-bottom: 20px;
+}
+
+.login-container p {
+   color: #004d40;
+   margin-bottom: 20px;
+}
+
+form {
+   margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.login-input, .add-task-form input[type="text"] {
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #00796b;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   width: 300px;
+}
+
+.login-input:focus, .add-task-form input[type="text"]:focus {
+   border-color: #004d40;
+   outline: none;
+   box-shadow: 0 0 5px rgba(0, 150, 136, 0.5);
+}
+
+button {
+   padding: 10px 20px;
+   font-size: 16px;
+   color: #fff;
+   background-color: #00796b;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+button:hover {
+   background-color: #004d40;
+}
+
+.task-list {
+   list-style-type: disc;
+   padding-left: 40px;
+   max-height: 300px;
+   overflow-y: auto;
+}
+
+li {
+   background: #fff;
+   margin: 5px 0;
+   padding: 10px;
+   border-radius: 5px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: transform 0.2s ease;
+}
+
+li:hover {
+   transform: scale(1.02);
+}
+
+li span {
+   flex: 1;
+   font-size: 16px;
+}
+
+li button {
+   margin-left: 10px;
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+
+li button.edit {
+   color: #1976d2;
+}
+
+li button.delete {
+   color: #d32f2f;
+}
+
+li button.complete {
+   color: #388e3c;
+}
+
+li button.not-complete {
+   color: #ff9800;
+}
+
+li button:hover {
+   transform: scale(1.1);
+}
+
+li span.completed {
+   text-decoration: line-through;
+   color: #757575;
+}
+
+/* Icons for buttons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+button.edit::before {
+   content: '\f044';
+   font-family: 'Font Awesome 5 Free';
+   font-weight: 900;
+}
+
+button.delete::before {
+   content: '\f1f8';
+   font-family: 'Font Awesome 5 Free';
+   font-weight: 900;
+}
+
+button.complete::before {
+   content: '\f00c';
+   font-family: 'Font Awesome 5 Free';
+   font-weight: 900;
+}
+
+button.not-complete::before {
+   content: '\f00d';
+   font-family: 'Font Awesome 5 Free';
+   font-weight: 900;
+}
+
+footer {
+   background-color: #00796b;
+   color: #ffffff;
+   text-align: center;
+   padding: 10px 20px;
+   flex-shrink: 0;
+}

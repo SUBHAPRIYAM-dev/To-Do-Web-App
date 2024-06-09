@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <header>
+            <h1>To-Do App</h1>
+        </header>
+        <main>
+            <div ng-show="!loggedIn" class="login-container">
+                <h2>Welcome to the To-Do App</h2>
+                <p>Organize your tasks efficiently and stay productive. Please log in to manage your tasks.</p>
+                <form ng-submit="login()">
+                    <input type="text" ng-model="username" placeholder="Enter your username" class="login-input" required>
+                    <button type="submit" class="login-button">Login Here</button>
+                </form>
+            </div>
+
+            <div ng-show="loggedIn" class="todo-container">
+                <h2>Welcome, {{username}}!</h2>
+                <h4>Add your task here..</h4>
+                <form ng-submit="addTask()" class="add-task-form">
+                    <input type="text" ng-model="newTask" placeholder="Add a new task" required>
+                    <button type="submit">Add Task</button>
+                </form>
+
+                <ul class="task-list">
+                    <li ng-repeat="task in tasks">
+                        <span ng-class="{'completed': task.completed}">{{task.text}} - {{task.time | date:'short'}}</span>
+                        <button class="edit" ng-click="editTask(task)"></button>
+                        <button class="delete" ng-click="deleteTask($index)"></button>
+                        <button class="complete" ng-click="toggleCompletion(task)" ng-if="!task.completed"></button>
+                        <button class="not-complete" ng-click="toggleCompletion(task)" ng-if="task.completed"></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 To-Do App. All rights reserved by @ <b>SUBHAPRIYAM-dev</b>.</p>
+        </footer>
+    </div>
+</body>
+</html>
