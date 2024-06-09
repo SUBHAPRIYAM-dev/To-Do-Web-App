@@ -11,8 +11,8 @@ This is a simple yet effective To-Do web application built using HTML, CSS, Java
 - **Dynamic UI:** Smooth user interactions with well-styled components and icons.
 
 ### Technologies Used
-- HTML5
-- CSS3**
+- **HTML5**
+- **CSS3**
 - **JavaScript**
 - **AngularJS**
 - **Font Awesome**
